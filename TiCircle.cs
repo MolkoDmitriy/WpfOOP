@@ -1,18 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Windows.Shapes;
 
 namespace WpfApp1
 {
-    class TiCircle:tPoint
+    class TiCircle:TiEllipse
     {
-        public tPoint center { get; set; }
 
-        public int rad = 150;
-
-        public TiCircle(tPoint point)
+        public TiCircle(tPoint p)
         {
-            center = point;
+            X = p.X;
+            Y = p.Y;
+            brush = p.brush;
+            ellipse = new Ellipse();
+            ellipse.Width = 100;
+            ellipse.Height = 100;
+            ellipse.Fill = brush;
         }
     }
 }

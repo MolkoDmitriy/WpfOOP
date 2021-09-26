@@ -4,15 +4,16 @@ using System.Windows.Media;
 
 namespace WpfApp1
 {
-    class tPoint
+    class tPoint:AbstractShape
     {
-        public int X { get; set; }
-        public int Y { get; set; }
+        public int X { get; protected set; }
+        public int Y { get; protected set; }
+
         private static Random rnd = new Random();
+
         public int _MoveX = rnd.Next(-7, 3) + 2;
         public int _MoveY = rnd.Next(-7, 3) + 2;
-        public SolidColorBrush brush { get; private set; }
-
+        public SolidColorBrush brush { get; protected set; }
         public tPoint()
         {
             X = 0;
@@ -24,16 +25,15 @@ namespace WpfApp1
             this.X = X;
             this.Y = Y;
             brush = Brush;
-        }      
+        }
         public tPoint(int X, int Y)
         {
             this.X = X;
             this.Y = Y;
             brush = Brushes.White;
         }
-        virtual public void RandomMovement(int width, int height)
+        public override void RandomMovement(int width, int height)
         {
-
             if (X < 0 || X > width)
             {
                 _MoveX = -_MoveX;
@@ -47,13 +47,5 @@ namespace WpfApp1
             if (_MoveY == 0) _MoveY += 2;
             Y += _MoveY;
         }
-
-        public void MovePoint(int move_X, int move_Y)
-        {
-            X += move_X;
-            Y += move_Y;
-        }
-
-
     }
 }
