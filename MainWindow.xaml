@@ -7,6 +7,6 @@
         mc:Ignorable="d"
         Title="Фигуры" Background="Black" Height="800" Width="1200" WindowStyle="SingleBorderWindow" VerticalAlignment="Top" HorizontalAlignment="Left">
     <Canvas x:Name="canvas1" Background="Black" Loaded="Canvas1_Loaded" Margin="10,10,10,14">
-        <Button Content="Сменить" Height="27" Width="95" Click="Button_Click" RenderTransformOrigin="0.517,0.598"/>
+        <Button Content="Сменить" Height="27" Width="96" Click="Button_Click" RenderTransformOrigin="0.517,0.598" Canvas.Left="542"/>
     </Canvas>
 </Window>

@@ -1,11 +1,15 @@
 ﻿using System;
 using System.Windows.Media;
+using System.Windows.Controls;
+using System.Windows;
 
 
 namespace WpfApp1
 {
     class tPoint:AbstractShape
     {
+        public MainWindow window = Application.Current.Windows[0] as MainWindow;
+
         public int X { get; protected set; }
         public int Y { get; protected set; }
 
@@ -13,7 +17,7 @@ namespace WpfApp1
 
         public int _MoveX = rnd.Next(-7, 3) + 2;
         public int _MoveY = rnd.Next(-7, 3) + 2;
-        public SolidColorBrush brush { get; protected set; }
+        public SolidColorBrush brush { get;  set; }
         public tPoint()
         {
             X = 0;
